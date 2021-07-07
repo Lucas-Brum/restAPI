@@ -3,6 +3,7 @@ const  Mongoose = require("mongoose")
 class connection {
     constructor() {
         this.dataBaseConnectionMongoDB()
+
     }
     //mongo
     dataBaseConnectionMongoDB(){
