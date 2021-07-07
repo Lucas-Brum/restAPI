@@ -30,3 +30,5 @@ class app {
 }
 
 module.exports = new app().app
+
+var teste
