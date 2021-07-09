@@ -1,5 +1,7 @@
 const User = require('../Models/User')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const config = require('../../config/auth')
 
 class LoginController {
 
@@ -22,6 +24,16 @@ class LoginController {
            })
        }
 
+       return res.status(200).json({
+        user: {
+            name: userExist.name,
+            email: userExist.email
+        },
+        token: jwt.sign(
+            {id: userExist._id},
+            {}, config.secret,
+            {expiresIn: config.expiresIn},)
+       })
     }
 }
 
