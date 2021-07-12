@@ -32,10 +32,10 @@ class LoginController {
       token: jwt.sign(
         {id: userExist._id}, 
         config.secret, 
-        {expireIn: config.expireIn} 
+        {expiresIn: config.expireIn} 
       )
     })
   }
 }
 
-module.exports = new LoginController()
+module.exports = new LoginController();
